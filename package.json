@@ -1,0 +1,17 @@
+{
+  "name": "tir-installer",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "electron": "^3.0.2",
+    "node-cmd": "^3.0.0"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron-builder": "^20.28.4"
+  }
+}
