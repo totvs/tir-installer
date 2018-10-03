@@ -5,13 +5,34 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.2",
-    "electron": "^3.0.2",
+    "bulma-extensions": "^3.0.0",
     "node-cmd": "^3.0.0"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "devDependencies": {
+    "electron": "^3.0.2",
     "electron-builder": "^20.28.4"
+  },
+  "build": {
+    "appId": "com.tir.installer",
+    "files":[
+      "node_modules/**/*",
+      "assets/*",
+      "scripts/*",
+      "styles/*",
+      "main.js",
+      "renderer.js",
+      "package.json"
+    ],
+    "extraFiles":[
+      "batches"
+    ],
+    "win":{
+      "target":"portable"
+    }
   }
 }

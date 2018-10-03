@@ -64,8 +64,38 @@ h1 {
     margin-top: 40px;
 }
 
+
 #homescreen_msg{
     padding: 20px;
+}
+
+#environment_comp{
+    width: 800px;
+}
+
+.environment_row {
+    margin-top: 15px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.environment_box {
+    height: 90px;
+    padding: 20px;
+    width: 300px;
+}
+
+.environment_box .flexcolumn{
+    width: 100%;
+}
+
+.environment_box button{
+    height: 33px;
+    width: 20px;
+}
+
+.environment_msg{
+    margin-left: 50px;
 }
 
 .itemgrow0 {
@@ -86,4 +116,23 @@ h1 {
 
 .hidden{
     display: none;
+}
+
+.centered {
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-left: -13px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.switch-field {
+    margin-right: -22px;
+}
+
+#choco_comp, #chocofinish_comp, #packagesplash, #package, #packagefinish {
+    justify-content: center;
 }

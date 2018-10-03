@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/bulma.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bulma-switch.min.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
     <title>TIR Installer</title>
 </head>
 
@@ -17,15 +19,21 @@
         </header>
 
         <div class="container flexrow itemgrow2">
-            <!-- <a class="button" id="next" href="pages/environment.html">Next Page</a> -->
             <home-screen></home-screen>
             <environment></environment>
+            <choco></choco>
+            <choco-finish></choco-finish>
+            <package-splash></package-splash>
+            <package></package>
+            <package-finish></package-finish>
         </div>
 
         <footer class="itemgrow0">
             <div class="container navigation-box">
+                <button id="skip_environment" class="button hidden">Skip</button>
                 <button id="previous" class="button hidden">Previous</button>
                 <button id="next" class="button">Next</button>
+                <button id="close" class="button hidden">Close</button>
             </div>
         </footer>
     </div>
@@ -33,6 +41,7 @@
 
     <script src="scripts/vue.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/fontawesome.js"></script>
     <script>
         require('./renderer.js')
     </script>

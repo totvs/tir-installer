@@ -7,12 +7,9 @@ if defined ChocolateyInstall (goto install-packages) ELSE (goto install-choco)
 goto install-packages
 
 :install-packages
-set /P py="Install/Update Python[Y/N]? "
-set /P ff="Install/Update Firefox[Y/N]? "
-set /P vsc="Install/Update Visual Studio Code[Y/N]? "
-set /P gi="Install/Update Git[Y/N]? "
+if /I "%1" EQU "Y" choco upgrade python --version 3.6.5 -y
+if /I "%2" EQU "Y" choco upgrade firefox -y
+if /I "%3" EQU "Y" choco upgrade git -y
+if /I "%4" EQU "Y" choco upgrade vscode -y
 
-if /I "%py%" EQU "Y" choco upgrade python --version 3.6.5 -y
-if /I "%ff%" EQU "Y" choco upgrade firefox -y
-if /I "%vsc%" EQU "Y" choco upgrade vscode -y
-if /I "%gi%" EQU "Y" choco upgrade git -y
+exit

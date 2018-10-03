@@ -2,6 +2,7 @@ const {app, BrowserWindow} = require('electron')
 const Promise = require("bluebird")
 const cmd = require("node-cmd")
 
+
 const windowArrays = []
 const getAsync = Promise.promisify(cmd.get, {multiArgs:true, context: cmd})
 const runAsync = Promise.promisify(cmd.run, {multiArgs:true, context: cmd})
@@ -34,6 +35,21 @@ async function taskKiller() {
     }
 };
 
+async function installChoco(argList){
+    let fullpath = __dirname + "\\batches\\install_chocolatey.cmd " + argList.join(" ");
+    let result = await getAsync(fullpath);
+    return result;
+}
+
+async function installPackage(){
+    let result = await getAsync("dir");
+    return result;
+}
+
+function closeWindow(){
+    app.quit()
+};
+
 //events
 app.on("ready", createWindow);
 
@@ -52,5 +68,8 @@ app.on("activate", function () {
 //exports
 
 module.exports = {
-    taskKiller
+    taskKiller,
+    installChoco,
+    installPackage,
+    closeWindow
 }
