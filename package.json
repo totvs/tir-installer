@@ -11,7 +11,9 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "bnpub-bash": "electron-builder && cp 'dist/tir-installer 1.0.0.exe' .",
+    "bnpub-cmd": "electron-builder && xcopy \"%cd%\\dist\\tir-installer 1.0.0.exe\""
   },
   "devDependencies": {
     "electron": "^3.0.2",
