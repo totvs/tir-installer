@@ -6,16 +6,13 @@ const remote = electron.remote
 const mainProcess = remote.require('./main')
 
 //events
-// document.getElementById("my-button").addEventListener("click", () => {
-//     mainProcess.taskKiller()
-// });
 
 document.getElementById("next").addEventListener("click", () => {
     if(myapp.screen == 1 && environmentIsSkipable()){
-            myapp.screen+=2;
-        }else{
-            myapp.screen++;
-        }
+        myapp.screen+=2;
+    }else{
+        myapp.screen++;
+    }
 
     if (myapp.screen == 1) {
         myapp.title = "Environment Installation"
@@ -44,9 +41,10 @@ document.getElementById("next").addEventListener("click", () => {
     }else if(myapp.screen == 4){
         addHiddenClass(document.getElementById("packagesplash"))
         addHiddenClass(document.getElementById("next"));
+        addHiddenClass(document.getElementById("previous"));
         removeHiddenClass(document.getElementById("package"));
 
-        installPackage().then((data) => {
+        installPackage().then(() => {
             addHiddenClass(document.getElementById("package"))
             removeHiddenClass(document.getElementById("packagefinish"));
             removeHiddenClass(document.getElementById("close"));
@@ -55,7 +53,12 @@ document.getElementById("next").addEventListener("click", () => {
 });
 
 document.getElementById("previous").addEventListener("click", () => {
-    myapp.screen--;
+    if(myapp.screen == 3){
+        myapp.screen-=2;
+        addHiddenClass(document.getElementById("packagesplash"));
+    }else{
+        myapp.screen--;
+    }
     if (myapp.screen == 0) {
         myapp.title = "TIR Installer"
         addHiddenClass(document.getElementById("previous"));
@@ -77,8 +80,10 @@ document.getElementById("skip_environment").addEventListener("click", () => {
         myapp.install.firefox = false
         myapp.install.git = false
         myapp.install.vscode = false
+        myapp.title = "Package Installation"
         addHiddenClass(document.getElementById("skip_environment"));
         addHiddenClass(document.getElementById("environment_comp"));
+        removeHiddenClass(document.getElementById("packagesplash"));
 });
 
 document.getElementById("python_chk").addEventListener("change", () => {

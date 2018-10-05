@@ -18,21 +18,16 @@
     "electron-builder": "^20.28.4"
   },
   "build": {
-    "appId": "com.tir.installer",
-    "files":[
-      "node_modules/**/*",
-      "assets/*",
-      "scripts/*",
-      "styles/*",
-      "main.js",
-      "renderer.js",
-      "package.json"
+    "appId": "com.example.tir-installer",
+    "extraFiles": [
+      "batches/"
     ],
-    "extraFiles":[
-      "batches"
-    ],
-    "win":{
-      "target":"portable"
-    }
+    "win": {
+      "target": "portable"
+    },
+    "directories": {
+      "buildResources": "resources"
+    },
+    "publish": null
   }
 }

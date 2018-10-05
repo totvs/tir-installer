@@ -36,14 +36,14 @@ async function taskKiller() {
 };
 
 async function installChoco(argList){
-    let fullpath = __dirname + "\\batches\\install_chocolatey.cmd " + argList.join(" ");
-    let result = await getAsync(fullpath);
-    return result;
+    let fullpath = __dirname + "\\..\\..\\batches\\install_chocolatey.cmd " + argList.join(" ");
+    return await getAsync(fullpath);
 }
 
 async function installPackage(){
-    let result = await getAsync("dir");
-    return result;
+    taskKiller();
+    let fullpath = __dirname + "\\..\\..\\batches\\install_package.cmd "
+    return await getAsync(fullpath);
 }
 
 function closeWindow(){
