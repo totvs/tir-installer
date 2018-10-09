@@ -2,7 +2,7 @@
 var homescreen = Vue.component("home-screen", {
     template:`
     <div id="homescreen_comp" class="container flexcolumn">
-        <div class="box" id="homescreen_msg">
+        <div>
             <p class="text">Welcome to TIR installation.</p>
             <p class="text">This installer will prepare the environment and will install the package.</p>
             <p class="text">Press "Next" to continue.</p>
@@ -140,7 +140,7 @@ var packagefinish = Vue.component("package-finish", {
 var myapp = new Vue({
     el: "#app",
     data:{
-        title: "TIR Installer",
+        title: "TIR - TOTVS Interface Robot",
         screen : 0,
         install: {
             python: true,
