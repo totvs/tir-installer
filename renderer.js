@@ -5,8 +5,15 @@ const electron = require('electron')
 const remote = electron.remote
 const mainProcess = remote.require('./main')
 
+var new_install_tooltip = "Installs the programs that are needed in order to run the test suites and installs or updates the TIR package."
+var upgrade_tooltip = "Installs or updates the TIR package."
+
+document.getElementById("new_install").setAttribute("data-tooltip", new_install_tooltip)
+document.getElementById("update_package").setAttribute("data-tooltip", upgrade_tooltip)
+
+
 //events
-document.getElementById("fresh_install").addEventListener("click", () => {
+document.getElementById("new_install").addEventListener("click", () => {
     myapp.screen = 1;
     myapp.title = "Environment Installation";
     myapp.skipped = false;

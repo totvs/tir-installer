@@ -8,10 +8,10 @@ var homescreen = Vue.component("home-screen", {
             <p class="text">Choose an action:</p>
         </div>
         <div id="start_box" class="container">
-            <button id="fresh_install" class="button is-rounded">
-                <p>Fresh Install</p>
+            <button id="new_install" class="button is-rounded tooltip is-tooltip-multiline" data-tooltip="">
+                <p>New Install</p>
             </button>
-            <button id="update_package" class="button is-rounded">
+            <button id="update_package" class="button is-rounded tooltip is-tooltip-multiline" data-tooltip="">
                 <p>Update Package</p>
             </button>
         </div>
@@ -87,7 +87,7 @@ var choco = Vue.component("choco", {
     template:`
     <div id="choco_comp" class="container flexcolumn hidden">
         <div class="container centered flexcolumn">
-            <p class="text">Chocolatey is installing the programs...</p>
+            <p class="text">The programs are installing...</p>
             <span class="icon is-large">
                 <i class="fas fa-spinner fa-pulse"></i>
             </span>
@@ -100,7 +100,7 @@ var chocofinish = Vue.component("choco-finish", {
     template:`
     <div id="chocofinish_comp" class="container flexcolumn hidden">
         <div class="container centered flexcolumn">
-            <p class="text">Chocolatey finished environment installation!</p>
+            <p class="text">The environment installation was finished!</p>
             <span class="icon is-large">
                 <i class="fas fa-check"></i>
             </span>

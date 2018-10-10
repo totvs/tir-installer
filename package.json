@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "license": "MIT",
+  "description": "TIR - Totvs Interface Robot Installer",
+  "author": "Totvs Automation Team",
   "dependencies": {
     "bluebird": "^3.5.2",
     "bulma-extensions": "^3.0.0",
