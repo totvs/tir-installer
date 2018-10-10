@@ -5,7 +5,15 @@ var homescreen = Vue.component("home-screen", {
         <div>
             <p class="text">Welcome to TIR installation.</p>
             <p class="text">This installer will prepare the environment and will install the package.</p>
-            <p class="text">Press "Next" to continue.</p>
+            <p class="text">Choose an action:</p>
+        </div>
+        <div id="start_box" class="container">
+            <button id="fresh_install" class="button is-rounded">
+                <p>Fresh Install</p>
+            </button>
+            <button id="update_package" class="button is-rounded">
+                <p>Update Package</p>
+            </button>
         </div>
     </div>
     `
@@ -147,7 +155,8 @@ var myapp = new Vue({
             firefox: true,
             git: false,
             vscode: false
-        }
+        },
+        skipped: false
     },
     components: {
         homescreen,

@@ -6,6 +6,26 @@ const remote = electron.remote
 const mainProcess = remote.require('./main')
 
 //events
+document.getElementById("fresh_install").addEventListener("click", () => {
+    myapp.screen = 1;
+    myapp.title = "Environment Installation";
+    myapp.skipped = false;
+    removeHiddenClass(document.getElementById("previous"));
+    removeHiddenClass(document.getElementById("next"));
+    removeHiddenClass(document.getElementById("skip_environment"));
+    addHiddenClass(document.getElementById("homescreen_comp"));
+    removeHiddenClass(document.getElementById("environment_comp"));
+});
+
+document.getElementById("update_package").addEventListener("click", () => {
+    myapp.screen = 3
+    myapp.title = "Package Installation"
+    myapp.skipped = true;
+    removeHiddenClass(document.getElementById("previous"));
+    removeHiddenClass(document.getElementById("next"));
+    addHiddenClass(document.getElementById("homescreen_comp"));
+    removeHiddenClass(document.getElementById("packagesplash"));
+});
 
 document.getElementById("next").addEventListener("click", () => {
     if(myapp.screen == 1 && environmentIsSkipable()){
@@ -54,7 +74,7 @@ document.getElementById("next").addEventListener("click", () => {
 
 document.getElementById("previous").addEventListener("click", () => {
     if(myapp.screen == 3){
-        myapp.screen-=2;
+        (myapp.skipped) ? myapp.screen=0 : myapp.screen-=2;
         addHiddenClass(document.getElementById("packagesplash"));
     }else{
         myapp.screen--;
@@ -62,6 +82,7 @@ document.getElementById("previous").addEventListener("click", () => {
     if (myapp.screen == 0) {
         myapp.title = "TIR Installer"
         addHiddenClass(document.getElementById("previous"));
+        addHiddenClass(document.getElementById("next"));
         addHiddenClass(document.getElementById("skip_environment"));
         removeHiddenClass(document.getElementById("homescreen_comp"));
         addHiddenClass(document.getElementById("environment_comp"));
