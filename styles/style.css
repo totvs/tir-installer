@@ -136,3 +136,13 @@ h1 {
 #choco_comp, #chocofinish_comp, #packagesplash, #package, #packagefinish {
     justify-content: center;
 }
+
+#start_box{
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+#start_box button{
+    height: 50px
+}

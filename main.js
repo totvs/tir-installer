@@ -8,6 +8,7 @@ const getAsync = Promise.promisify(cmd.get, {multiArgs:true, context: cmd})
 const runAsync = Promise.promisify(cmd.run, {multiArgs:true, context: cmd})
 
 let mainWindow
+let isDebug = false
 
 //functions
 function createWindow () {
@@ -37,12 +38,18 @@ async function taskKiller() {
 
 async function installChoco(argList){
     let fullpath = __dirname + "\\..\\..\\batches\\install_chocolatey.cmd " + argList.join(" ");
+    if (isDebug) {
+        fullpath = __dirname + "\\batches\\install_chocolatey.cmd " + argList.join(" ");
+    }
     return await getAsync(fullpath);
 }
 
 async function installPackage(){
     taskKiller();
     let fullpath = __dirname + "\\..\\..\\batches\\install_package.cmd "
+    if (isDebug) {
+        fullpath = __dirname + "\\batches\\install_package.cmd "
+    }
     return await getAsync(fullpath);
 }
 
