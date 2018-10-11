@@ -8,7 +8,7 @@ const getAsync = Promise.promisify(cmd.get, {multiArgs:true, context: cmd})
 const runAsync = Promise.promisify(cmd.run, {multiArgs:true, context: cmd})
 
 let mainWindow
-let isDebug = true
+let isDebug = false
 
 //functions
 function createWindow () {
