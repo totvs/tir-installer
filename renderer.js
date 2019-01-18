@@ -87,7 +87,7 @@ document.getElementById("previous").addEventListener("click", () => {
         myapp.screen--;
     }
     if (myapp.screen == 0) {
-        myapp.title = "TIR Installer"
+        myapp.title = "Installer"
         addHiddenClass(document.getElementById("previous"));
         addHiddenClass(document.getElementById("next"));
         addHiddenClass(document.getElementById("skip_environment"));

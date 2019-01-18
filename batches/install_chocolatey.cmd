@@ -1,6 +1,4 @@
 @echo off
-set arglist=%1 %2 %3 %4
-
-powershell -Command "Start-Process cmd -ArgumentList '/k %cd%\\batches\\chocolatey.cmd %arglist%' -Verb RunAs -Wait"
+start /wait %1\python-3.7.1.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0 TargetDir=C:\Python37
 echo success
 exit
