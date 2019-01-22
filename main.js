@@ -49,7 +49,7 @@ async function installPackage(){
     taskKiller();
     let fullpath = __dirname + "\\..\\..\\batches\\install_package.cmd "
     if (isDebug) {
-        fullpath = __dirname + "\\batches\\install_package.cmd "
+        fullpath = __dirname + "\\batches\\install_package.cmd "+__dirname
     }
     return await getAsync(fullpath);
 }

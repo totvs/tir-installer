@@ -169,7 +169,7 @@ function environmentIsSkipable(){
             myapp.install.git ||
             myapp.install.vscode)
 }
-
+debugger
 function installChoco(argList) {
     return mainProcess.installChoco(argList);
 }
