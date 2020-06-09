@@ -1,3 +1,6 @@
+# Projeto descontinuado.
+# tir-installer has been Discontinued
+
 # tir-installer
 
 This is the repository of TIR's Installer.
