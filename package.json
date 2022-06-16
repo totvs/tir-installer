@@ -18,7 +18,7 @@
     "bnpub-cmd": "electron-builder && xcopy \"%cd%\\dist\\tir-installer 1.0.0.exe\""
   },
   "devDependencies": {
-    "electron": "^3.0.2",
+    "electron": "^15.5.5",
     "electron-builder": "^20.28.4"
   },
   "build": {
