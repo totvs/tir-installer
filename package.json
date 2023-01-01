@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "electron": "^3.0.2",
-    "electron-builder": "^20.28.4"
+    "electron-builder": "^20.44.4"
   },
   "build": {
     "appId": "com.example.tir-installer",
